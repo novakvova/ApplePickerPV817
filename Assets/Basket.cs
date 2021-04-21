@@ -51,6 +51,11 @@ public class Basket : MonoBehaviour
             score += 100;
             // Преобразовать число очков обратно в строку и вывести ее на экран
             scoreGT.text = score.ToString();
+
+            if(score > HighScore.score)
+            {
+                HighScore.score = score;
+            }
         }
     }
 }
