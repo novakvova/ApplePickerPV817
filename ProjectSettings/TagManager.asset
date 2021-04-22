@@ -7,6 +7,7 @@ TagManager:
   - Apple
   - AppleTree
   - Basket
+  - Dropdown
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - AppleTree
   - Apple
   - Basket
-  - 
+  - Dropdown
   - 
   - 
   - 

@@ -11,6 +11,8 @@ public class ApplePicker : MonoBehaviour
     public float basketBottomY = -12f;
     public float basketSpacingY = 2f;
     public List<GameObject> basketList;
+    public static float level = 1f;
+    public static float appleSpeed = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +31,10 @@ public class ApplePicker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     public void AppleDestoroyed()
@@ -47,7 +52,7 @@ public class ApplePicker : MonoBehaviour
 
         if(basketList.Count == 0)
         {
-            SceneManager.LoadScene("_Scene_0");
+            SceneManager.LoadScene("End");
         }
     }
 }

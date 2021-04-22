@@ -14,7 +14,7 @@ public class AppleTree : MonoBehaviour
     // –ассто€ние, на котором должно измен€тьс€ направление движени€ €блони
     public float leftAndRightEdge = 10f;
 
-    public float chanceToChangeDirections = 0.1f;
+    public float chanceToChangeDirections = 1f;
 
     // „астота создани€ экземпл€ров €блок
     public float secondsBetweenAppleDrops = 1f;
@@ -23,7 +23,9 @@ public class AppleTree : MonoBehaviour
     void Start()
     {
         // —брасывать €блоки раз в секунду
-        Invoke("DropApple", 2f);
+        Invoke("DropApple", secondsBetweenAppleDrops);
+        speed = speed * ApplePicker.level;
+        secondsBetweenAppleDrops = ApplePicker.appleSpeed;
     }
 
     void DropApple()
@@ -42,7 +44,7 @@ public class AppleTree : MonoBehaviour
         transform.position = pos;
 
         // »зменение направлени€
-        if(pos.x < -this.leftAndRightEdge)
+        if (pos.x < -this.leftAndRightEdge)
         {
             this.speed = Mathf.Abs(speed);  // Ќачать движение вправо
         }
